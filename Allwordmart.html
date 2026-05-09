@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLWORDMART | Hidden Intel Node</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --terminal-green: #00ff41;
+            --dark-bg: #020202;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--terminal-green);
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(0deg, transparent 50%, rgba(0, 255, 65, 0.02) 50%);
+            background-size: 100% 4px;
+        }
+
+        .main-frame {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(5, 5, 5, 0.95);
+            border: 2px solid var(--terminal-green);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.2);
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        input {
+            background: #000 !important;
+            border: 1px solid #1a3a1a !important;
+            color: var(--terminal-green) !important;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        input:focus {
+            border-color: var(--terminal-green) !important;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+            outline: none;
+        }
+
+        .status-bar {
+            font-size: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #1a3a1a;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            opacity: 0.7;
+        }
+
+        .copy-btn {
+            font-size: 9px;
+            background: #1a1a1a;
+            padding: 2px 6px;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #333;
+            color: white;
+            border-color: var(--terminal-green);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-frame">
+        <div class="status-bar">
+            <span>Enkripsi: Aktif</span>
+            <span>Allwordmart v4.1.2</span>
+        </div>
+
+        <header class="text-center mb-8">
+            <h1 class="text-2xl font-bold tracking-widest">AKSES TERBATAS</h1>
+            <p class="text-[10px] text-yellow-500 mt-1 uppercase">Node Intelijen Sernawart</p>
+        </header>
+
+        <!-- Area Login -->
+        <div id="login-container">
+            <div id="console-output" class="bg-black p-3 text-[10px] mb-6 h-24 overflow-y-auto border border-green-900/30">
+                <p>> Menunggu otorisasi passkey...</p>
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <label class="text-[10px] block mb-2 text-center opacity-70 uppercase tracking-widest">Masukkan Passkey Jaringan</label>
+                    <input type="password" id="passkey" class="w-full p-4 text-lg font-bold" placeholder="••••••••" autocomplete="off">
+                </div>
+                <button onclick="prosesLogin()" class="w-full bg-green-900 hover:bg-green-600 text-black font-bold py-4 text-sm transition-all uppercase tracking-widest">
+                    Buka Enkripsi
+                </button>
+            </div>
+
+            <div class="mt-10 text-center pt-4 border-t border-green-950">
+                <p class="text-[10px] opacity-60 mb-3 italic">Butuh kode? Hubungi informan pusat:</p>
+                <div class="flex flex-col items-center gap-2">
+                    <a id="tk-link" href="https://www.tiktok.com/@koperasi.sernawart" target="_blank" class="text-xs text-blue-400 font-bold underline">
+                        tiktok.com/@koperasi.sernawart
+                    </a>
+                    <button onclick="copyLink()" class="copy-btn text-green-500 border-green-900">Salin Link TikTok</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Area Pasar (Tersembunyi) -->
+        <div id="market-container" class="hidden">
+            <div class="bg-green-900/10 border border-green-900 p-3 flex justify-between items-center mb-6">
+                <span class="text-xs font-bold text-blue-400">STATUS: TERHUBUNG</span>
+                <span class="text-xs text-green-500 font-bold tracking-widest">SESI: ANONIM</span>
+            </div>
+
+            <div class="border border-green-800 p-4 bg-black/50">
+                <div class="flex justify-between mb-2">
+                    <span class="text-sm font-bold tracking-tight text-white uppercase">[DATA] PJM_ADMIN_PASS</span>
+                </div>
+                <p class="text-[10px] opacity-70 mb-4 leading-relaxed italic">
+                    Akses kontrol utama PT Pranaja Jaya Makmur. Informasi krusial untuk membatalkan protokol serangan di area Jawa-Bali-Madura.
+                </p>
+                <button id="btn-buy" onclick="eksekusiBeli()" class="w-full border border-green-500 py-3 text-xs hover:bg-green-500 hover:text-black font-bold transition-all uppercase tracking-widest">
+                    Dapatkan Kunci Akses
+                </button>
+            </div>
+
+            <div id="result-box" class="hidden mt-6 p-5 border-2 border-dashed border-yellow-500 bg-yellow-900/20 text-center">
+                <p class="text-yellow-500 text-[10px] font-bold mb-3 tracking-widest uppercase">DEKRIPSI BERHASIL</p>
+                <p class="text-[11px] opacity-80">TOKEN ADMIN PJMWEB:</p>
+                <div class="flex items-center justify-center gap-2 my-3">
+                    <p id="pjm-pass" class="text-2xl font-bold bg-yellow-500 text-black px-6 py-1 select-all">ARYAJAYA</p>
+                </div>
+                <button onclick="copyPass()" class="copy-btn mb-2">Salin Password</button>
+                <p class="text-[9px] text-red-500 font-bold mt-2 animate-pulse uppercase tracking-tighter">Gunakan di gerbang pjm.html segera!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifikasi Custom -->
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-500 text-black px-4 py-2 text-[10px] font-bold hidden z-[100]">
+        BERHASIL DISALIN!
+    </div>
+
+    <script>
+        const consoleOut = document.getElementById('console-output');
+        
+        function log(msg) {
+            const p = document.createElement('p');
+            p.innerHTML = `> ${msg}`;
+            consoleOut.appendChild(p);
+            consoleOut.scrollTop = consoleOut.scrollHeight;
+        }
+
+        function showToast(text) {
+            const t = document.getElementById('toast');
+            t.innerText = text;
+            t.classList.remove('hidden');
+            setTimeout(() => t.classList.add('hidden'), 2000);
+        }
+
+        function copyLink() {
+            const link = "https://www.tiktok.com/@koperasi.sernawart";
+            const el = document.createElement('textarea');
+            el.value = link;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            showToast("LINK DISALIN!");
+        }
+
+        function copyPass() {
+            const pass = document.getElementById('pjm-pass').innerText;
+            const el = document.createElement('textarea');
+            el.value = pass;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            showToast("PASSWORD DISALIN!");
+        }
+
+        function prosesLogin() {
+            const key = document.getElementById('passkey').value.trim();
+
+            log("Memulai proses otorisasi...");
+
+            if (key === 'SNWkom') {
+                log("<span style='color: #3b82f6'>PASSKEY VALID. MEMBUKA ENKRIPSI JARINGAN...</span>");
+                setTimeout(() => {
+                    document.getElementById('login-container').classList.add('hidden');
+                    document.getElementById('market-container').classList.remove('hidden');
+                }, 800);
+            } else {
+                log("<span style='color: #ef4444'>KESALAHAN: PASSKEY TIDAK VALID.</span>");
+                alert("Otorisasi Gagal! Periksa kembali kode dari Sernawart.");
+            }
+        }
+
+        function eksekusiBeli() {
+            log("Menghubungkan ke server pusat PJM...");
+            document.getElementById('btn-buy').innerText = "MENGEKSTRAKSI DATA...";
+            document.getElementById('btn-buy').disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('btn-buy').innerText = "DATA EKSTRAK SELESAI";
+                document.getElementById('result-box').classList.remove('hidden');
+                log("<span style='color: #eab308'>DATA DITERIMA. MEMULAI DEKRIPSI KUNCI...</span>");
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
+
+```
